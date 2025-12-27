@@ -618,7 +618,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WorldBase1
   UpdateMesh: 0
+  subdivisions: 0
   mat: {fileID: -876546973899608171, guid: dbee4127c23effe45a1eee57de2cafff, type: 3}
+  seeingEye2: []
+  seeingEye3: 
+  precision: 0.1
 --- !u!4 &1581809846
 Transform:
   m_ObjectHideFlags: 0

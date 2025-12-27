@@ -3,6 +3,10 @@ using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 
+
+//THIS SCRIPT IS DECPRECIATED FOR NOW
+//Ideally, this will be updated to work, however it is currently broken, and I cannot fix it at this moment
+//Feel free to take a stab at it though
 public class WorldBase1 : MonoBehaviour
 {
 	PlanetComponents.GoldenRectangle rectangleBase = new();
@@ -50,7 +54,7 @@ public class WorldBase1 : MonoBehaviour
 		if (UpdateMesh)
 		{
 			UpdateMesh = false;
-			StartCoroutine(MeshMaker());
+			//StartCoroutine(MeshMaker());
 		}
 	}
 
