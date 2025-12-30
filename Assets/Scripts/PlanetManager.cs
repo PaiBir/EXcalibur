@@ -1,6 +1,5 @@
-using System.Collections.Generic;
 using System.Linq;
-using Unity.VisualScripting;
+using System.Collections;
 using UnityEngine;
 
 public class PlanetManager : MonoBehaviour
@@ -19,8 +18,8 @@ public class PlanetManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        this.AddComponent<MeshFilter>();
-		this.AddComponent<MeshRenderer>();
+        gameObject.AddComponent<MeshFilter>();
+		gameObject.AddComponent<MeshRenderer>();
 		planet_prop = new Planet_Info();
     }
 

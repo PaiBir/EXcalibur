@@ -3,22 +3,84 @@ using UnityEngine;
 public class worldbase : MonoBehaviour
 {
 	[Header("Star Properties")]
-	public float starLum = 1.0f; //1 Earth sun worth of luminosity
+	public float starMass = 1.0f; //1 Sol worth of mass
+	public float starLum = 1.0f; //1 Sol worth of luminosity
+	public float starTemp = 5776; //Temperature of our sun
+	public GameObject StarBase;
+	public Light realLight; //For game
 	[Header("Planet Properties")]
 	public float distance = 1.0f; //1 AU away
+	public int resolution = 1; //planet subdivisions
 	public GameObject PlanetBase; //Put in prefab to use
+	public PlanetHolder planet_admin;
 	[Header("UI")]
-	public Canvas canvas; //Connect to UI
+	public UI_Manager canvas; //Connect to UI
 	public Camera inUseCam; //Position camera
+
+	GameObject starObject;
+	SunManager starManager;
+	GameObject PlanetObject;
 	// Start is called once before the first execution of Update after the MonoBehaviour is created
 	void Start()
 	{
-		
+		canvas.Boss = this;
+		PlanetObject = Instantiate(PlanetBase);
+		starObject = Instantiate(StarBase);
+		PlanetObject.transform.parent = transform;
+		starObject.transform.parent = transform;
+		starManager = starObject.GetComponent<SunManager>();
+		canvas.starLum = starLum;
+		canvas.starTemp = starTemp;
+		canvas.starMass = starMass;
+		canvas.distance = distance;
+		canvas.resolution = resolution;
 	}
 
 	// Update is called once per frame
 	void Update()
 	{
+		starMass = canvas.starMass;
+		starLum = canvas.starLum;
+		starTemp = canvas.starTemp;
+		distance = canvas.distance;
+		resolution = canvas.resolution;
+
+		if(planet_admin == null)
+		{
+			planet_admin = PlanetObject.GetComponent<PlanetManager>().planet_admin;
+		}
+		if(resolution > planet_admin.Subdivisions.Length)
+		{
+			resolution = planet_admin.Subdivisions.Length;
+			canvas.resolution = resolution;
+		}
+		if(resolution < 1)
+		{
+			resolution = 1;
+			canvas.resolution = resolution;
+		}
+		inUseCam.transform.position = new Vector3(distance * 10 + 5, 0, 5);
+		inUseCam.transform.LookAt(new Vector3(distance * 10 - 5, 0, 0));
+		PlanetObject.transform.position = new Vector3(distance*10, 0, 0);
+		PlanetObject.GetComponent<PlanetManager>().subdivLevel = resolution;
+		realLight.intensity = starLum;
+		realLight.color = starManager.starColor;
 		
+		if(starMass != starManager.starMass)
+		{
+			starManager.starMass = starMass;
+		}
+		if (starLum != starManager.starLum)
+		{
+			starManager.starLum = starLum;
+		}
+		if (starTemp != starManager.starTemp)
+		{
+			if (starTemp < 1)
+			{
+				starTemp = 1;
+			}
+			starManager.starTemp = starTemp;
+		}
 	}
 }

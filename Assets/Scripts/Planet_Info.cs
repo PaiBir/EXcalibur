@@ -1,7 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Planet_Info", menuName = "Scriptable Objects/Planet Info")]
-public class Planet_Info : ScriptableObject
+public class Planet_Info
 {
 	public Vector3[] positionsCartesian;
 	public Vector2[] positionsLatLon;
