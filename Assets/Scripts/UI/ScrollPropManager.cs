@@ -68,19 +68,22 @@ public class ScrollPropManager : MonoBehaviour
 		switch (variable)
 		{
 			case Property_Display.InfluenceVariable.StarRadius:
-				Input.text = manager.starMass.ToString();
+				Input.text = manager.Boss.starMass.ToString();
 				break;
 			case Property_Display.InfluenceVariable.StarLuminosity:
-				Input.text = manager.starLum.ToString();
+				Input.text = manager.Boss.starLum.ToString();
 				break;
 			case Property_Display.InfluenceVariable.StarTemperature:
-				Input.text = manager.starTemp.ToString();
+				Input.text = manager.Boss.starTemp.ToString();
 				break;
 			case Property_Display.InfluenceVariable.PlanetDistance:
-				Input.text = manager.distance.ToString();
+				Input.text = manager.Boss.distance.ToString();
 				break;
 			case Property_Display.InfluenceVariable.PlanetResolution:
-				Input.text = manager.resolution.ToString();
+				Input.text = manager.Boss.resolution.ToString();
+				break;
+			case Property_Display.InfluenceVariable.OrbitSpeed:
+				Input.text = manager.Boss.orbitspeed.ToString();
 				break;
 			default:
 				break;
@@ -89,36 +92,42 @@ public class ScrollPropManager : MonoBehaviour
 
 	public void SetFromInputField(string input)
 	{
-		Debug.Log(input);
+		if(input == null || input.Length == 0)
+		{
+			return;
+		}
 		switch (variable)
 		{
 			case Property_Display.InfluenceVariable.StarRadius:
-				manager.starMass = float.Parse(input);
+				manager.Boss.starMass = float.Parse(input);
 				break;
 			case Property_Display.InfluenceVariable.StarLuminosity:
-				manager.starLum = float.Parse(input);
+				manager.Boss.starLum = float.Parse(input);
 				break;
 			case Property_Display.InfluenceVariable.StarTemperature:
-				manager.starTemp = int.Parse(input);
+				manager.Boss.starTemp = int.Parse(input);
 				break;
 			case Property_Display.InfluenceVariable.PlanetDistance:
-				manager.distance = float.Parse(input);
+				manager.Boss.distance = float.Parse(input);
 				break;
 			case Property_Display.InfluenceVariable.PlanetResolution:
 				int InputVal = int.Parse(input);
 				if(InputVal < 0)
 				{
 					Input.text = "0";
-					manager.resolution = InputVal;
-				} else if(InputVal > manager.Boss.planet_admin.Subdivisions.Length-1)
+					manager.Boss.resolution = InputVal;
+				} else if(InputVal > manager.Boss.planet_admin.Subdivisions.Length)
 				{
-					Input.text = (manager.Boss.planet_admin.Subdivisions.Length - 1).ToString();
-					manager.resolution = InputVal;
+					Input.text = (manager.Boss.planet_admin.Subdivisions.Length).ToString();
+					manager.Boss.resolution = InputVal;
 				} else
 				{
-					manager.resolution = InputVal;
+					manager.Boss.resolution = InputVal;
 				}
 					break;
+			case Property_Display.InfluenceVariable.OrbitSpeed:
+				manager.Boss.orbitspeed = float.Parse(input);
+				break;
 			default:
 				break;
 		}
@@ -130,14 +139,6 @@ public class ScrollPropManager : MonoBehaviour
 		{
 			case Property_Display.InfluenceVariable.StarRadius:
 				break;
-			case Property_Display.InfluenceVariable.StarLuminosity:
-				break;
-			case Property_Display.InfluenceVariable.StarTemperature:
-				break;
-			case Property_Display.InfluenceVariable.PlanetDistance:
-				break;
-			case Property_Display.InfluenceVariable.PlanetResolution:
-				break;
 			default:
 				break;
 		}
@@ -148,14 +149,6 @@ public class ScrollPropManager : MonoBehaviour
 		switch (variable)
 		{
 			case Property_Display.InfluenceVariable.StarRadius:
-				break;
-			case Property_Display.InfluenceVariable.StarLuminosity:
-				break;
-			case Property_Display.InfluenceVariable.StarTemperature:
-				break;
-			case Property_Display.InfluenceVariable.PlanetDistance:
-				break;
-			case Property_Display.InfluenceVariable.PlanetResolution:
 				break;
 			default:
 				break;

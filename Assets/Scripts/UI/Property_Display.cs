@@ -18,7 +18,8 @@ public class Property_Display : MonoBehaviour
 		StarLuminosity,
 		StarTemperature,
 		PlanetDistance,
-		PlanetResolution
+		PlanetResolution,
+		OrbitSpeed
 	}
 	[System.Serializable]
 	public struct PropGuide

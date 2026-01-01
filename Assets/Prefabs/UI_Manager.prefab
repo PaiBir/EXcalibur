@@ -262,15 +262,19 @@ MonoBehaviour:
     Target: 4
     MultibuttonChannels: 
     Name: Simulation Resolution
+  - Input: 1
+    Target: 5
+    MultibuttonChannels: 
+    Name: Orbit Speed (Earth days)
   screens:
   - Name: Star Properties
     propindicies: 000000000100000002000000
   - Name: Planet Properties
-    propindicies: 03000000
+    propindicies: 0300000005000000
   - Name: Display Controls
     propindicies: 04000000
   - Name: Junk
-    propindicies: 0000000001000000020000000300000004000000000000000100000002000000030000000400000000000000010000000200000003000000040000000000000001000000020000000300000004000000
+    propindicies: 0000000001000000020000000300000004000000050000000000000001000000020000000300000004000000050000000000000001000000020000000300000004000000050000000000000001000000
   propBlock: {fileID: 5680644137270923164, guid: da68701e4f240ee47927fffbd85ed292, type: 3}
   scrollbar: {fileID: 1894789653099795657}
   proparea: {fileID: 7754198573277700429}
@@ -542,6 +546,7 @@ MonoBehaviour:
   starTemp: 5776
   distance: 1
   resolution: 1
+  orbitspeed: 1
   Boss: {fileID: 0}
 --- !u!1 &8103286093805486868
 GameObject:

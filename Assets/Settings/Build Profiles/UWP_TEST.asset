@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 15003, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: Windows_TEST
+  m_Name: UWP_TEST
   m_EditorClassIdentifier: UnityEditor.dll::UnityEditor.Build.Profile.BuildProfile
   m_AssetVersion: 1
-  m_BuildTarget: 19
-  m_Subtarget: 2
-  m_PlatformId: 4e3c793746204150860bf175a9a41a05
+  m_BuildTarget: 21
+  m_Subtarget: 0
+  m_PlatformId: 32e92b6f4db44fadb869cafb8184d021
   m_PlatformBuildProfile:
-    rid: 1147044125283975633
+    rid: 1147044125283975635
   m_OverrideGlobalSceneList: 0
   m_Scenes: []
   m_HasScriptingDefines: 0
@@ -35,7 +35,7 @@ MonoBehaviour:
     - line: '|   targetDevice: 2'
     - line: '|   useOnDemandResources: 0'
     - line: '|   accelerometerFrequency: 60'
-    - line: '|   companyName: AsherGriffiths'
+    - line: '|   companyName: Asher Griffiths'
     - line: '|   productName: EXcalibur'
     - line: '|   defaultCursor: {instanceID: 0}'
     - line: '|   cursorHotspot: {x: 0, y: 0}'
@@ -120,7 +120,7 @@ MonoBehaviour:
     - line: '|   bakeCollisionMeshes: 0'
     - line: '|   forceSingleInstance: 0'
     - line: '|   useFlipModelSwapchain: 1'
-    - line: '|   resizableWindow: 1'
+    - line: '|   resizableWindow: 0'
     - line: '|   useMacAppStoreValidation: 0'
     - line: '|   macAppStoreCategory: public.app-category.games'
     - line: '|   gpuSkinning: 1'
@@ -132,7 +132,7 @@ MonoBehaviour:
     - line: '|   xboxEnableFitness: 0'
     - line: '|   visibleInBackground: 1'
     - line: '|   allowFullscreenSwitch: 1'
-    - line: '|   fullscreenMode: 2'
+    - line: '|   fullscreenMode: 3'
     - line: '|   xboxSpeechDB: 0'
     - line: '|   xboxEnableHeadOrientation: 0'
     - line: '|   xboxEnableGuest: 0'
@@ -168,7 +168,9 @@ MonoBehaviour:
     - line: '|   visionOSBundleVersion: 1.0'
     - line: '|   tvOSBundleVersion: 1.0'
     - line: '|   bundleVersion: 0.0.1'
-    - line: '|   preloadedAssets: []'
+    - line: '|   preloadedAssets:'
+    - line: '|   - {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b,
+        type: 3}'
     - line: '|   metroInputSource: 0'
     - line: '|   wsaTransparentSwapchain: 0'
     - line: '|   m_HolographicPauseOnTrackingLoss: 1'
@@ -557,7 +559,7 @@ MonoBehaviour:
     - line: '|       m_Kind: 1'
     - line: '|       m_SubKind: '
     - line: '|   m_BuildTargetBatching:'
-    - line: '|   - m_BuildTarget: Standalone'
+    - line: '|   - m_BuildTarget: Windows Store Apps'
     - line: '|     m_StaticBatching: 1'
     - line: '|     m_DynamicBatching: 0'
     - line: '|   m_BuildTargetShaderSettings: []'
@@ -882,7 +884,7 @@ MonoBehaviour:
     - line: '|   m_RenderingPath: 1'
     - line: '|   m_MobileRenderingPath: 1'
     - line: '|   metroPackageName: EXcalibur'
-    - line: '|   metroPackageVersion: 1.0.0.0'
+    - line: '|   metroPackageVersion: 0.0.0.1'
     - line: '|   metroCertificatePath: '
     - line: '|   metroCertificatePassword: '
     - line: '|   metroCertificateSubject: '
@@ -906,7 +908,8 @@ MonoBehaviour:
     - line: '|   metroSplashScreenUseBackgroundColor: 0'
     - line: '|   syncCapabilities: 0'
     - line: '|   platformCapabilities: {}'
-    - line: '|   metroTargetDeviceFamilies: {}'
+    - line: '|   metroTargetDeviceFamilies:'
+    - line: '|     Desktop: True'
     - line: '|   metroFTAName: '
     - line: '|   metroFTAFileTypes: []'
     - line: '|   metroProtocolName: '
@@ -981,8 +984,8 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: 1147044125283975633
-      type: {class: WindowsPlatformSettings, ns: UnityEditor.WindowsStandalone, asm: UnityEditor.WindowsStandalone.Extensions}
+    - rid: 1147044125283975635
+      type: {class: UWPPlatformSettings, ns: UnityEditor.UWP, asm: UnityEditor.UWP.Extensions}
       data:
         m_Development: 1
         m_ConnectProfiler: 0
@@ -998,9 +1001,14 @@ MonoBehaviour:
         m_InsightsSettingsContainer:
           m_BuildProfileEngineDiagnosticsState: 2
         m_AdaptivePerformanceEnabled: 0
-        m_WindowsBuildAndRunDeployTarget: 0
-        m_Architecture: 0
-        m_CreateSolution: 0
+        m_CopyRefences: 0
         m_CopyPDBFiles: 0
+        m_BuildConfiguration: 1
+        m_WsaArchitecture: 
+        m_WsaUWPVisualStudioVersion: 17.14.36811.4
+        m_WsaUWPSDK: 
+        m_WsaMinUWPSDK: 10.0.19041.0
+        m_WsaUWPBuildType: 2
+        m_WsaBuildAndRunDeployTarget: 0
         m_WindowsDevicePortalAddress: 
         m_WindowsDevicePortalUsername: 

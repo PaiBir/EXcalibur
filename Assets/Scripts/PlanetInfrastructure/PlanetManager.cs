@@ -12,9 +12,23 @@ public class PlanetManager : MonoBehaviour
 	[Range(1,6)] //Only icosphere meshes exist, and there are 6 of them
 	public int subdivLevel = 0;
 	public Material mat;
+	public float orbitspeed = 1.0f;
 
 	int prevSubdiv = -1;
 	Mesh currentMesh = null;
+
+	struct PointInfo
+	{
+		int vertexIndex;
+		int[] neighboringVerts;
+	}
+
+	struct DataStorage
+	{
+		PointInfo vertexInfo;
+		public ClimateCell[] VertexCells;
+	}
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -26,6 +40,7 @@ public class PlanetManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+		transform.rotation = Quaternion.Euler(0, Time.time * orbitspeed, 0);
 		if (prevSubdiv != subdivLevel)
 		{
 			GetComponent<MeshRenderer>().material = mat;
@@ -50,4 +65,14 @@ public class PlanetManager : MonoBehaviour
 		}
 		GetComponent<MeshFilter>().mesh = currentMesh;
     }
+
+	void EnergyBalance()
+	{
+
+	}
+
+	void ChemicalBalance()
+	{
+
+	}
 }

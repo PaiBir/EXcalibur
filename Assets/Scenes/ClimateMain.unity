@@ -499,6 +499,7 @@ MonoBehaviour:
   StarBase: {fileID: 3586459341899692167, guid: b3ff644857b421643b40b9538059d417, type: 3}
   realLight: {fileID: 1129955099}
   distance: 1
+  orbitspeed: 1
   resolution: 1
   PlanetBase: {fileID: 9141147520749603719, guid: aa91dfec5a83bc64c8db9503e0f791db, type: 3}
   planet_admin: {fileID: 0}
