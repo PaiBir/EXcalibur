@@ -67,7 +67,7 @@ public class ScrollPropManager : MonoBehaviour
 		//To be customized per variable. Could probably be done simpler, but this works for now
 		switch (variable)
 		{
-			case Property_Display.InfluenceVariable.StarRadius:
+			case Property_Display.InfluenceVariable.StarMass:
 				Input.text = manager.Boss.starMass.ToString();
 				break;
 			case Property_Display.InfluenceVariable.StarLuminosity:
@@ -85,6 +85,9 @@ public class ScrollPropManager : MonoBehaviour
 			case Property_Display.InfluenceVariable.OrbitSpeed:
 				Input.text = manager.Boss.orbitspeed.ToString();
 				break;
+			case Property_Display.InfluenceVariable.BolometricCorrectionFactor:
+				Input.text = manager.Boss.bolometricCorrectionFactor.ToString();
+				break;
 			default:
 				break;
 		}
@@ -98,17 +101,17 @@ public class ScrollPropManager : MonoBehaviour
 		}
 		switch (variable)
 		{
-			case Property_Display.InfluenceVariable.StarRadius:
-				manager.Boss.starMass = float.Parse(input);
+			case Property_Display.InfluenceVariable.StarMass:
+				manager.Boss.starMass = double.Parse(input);
 				break;
 			case Property_Display.InfluenceVariable.StarLuminosity:
-				manager.Boss.starLum = float.Parse(input);
+				manager.Boss.starLum = double.Parse(input);
 				break;
 			case Property_Display.InfluenceVariable.StarTemperature:
 				manager.Boss.starTemp = int.Parse(input);
 				break;
 			case Property_Display.InfluenceVariable.PlanetDistance:
-				manager.Boss.distance = float.Parse(input);
+				manager.Boss.distance = double.Parse(input);
 				break;
 			case Property_Display.InfluenceVariable.PlanetResolution:
 				int InputVal = int.Parse(input);
@@ -128,6 +131,9 @@ public class ScrollPropManager : MonoBehaviour
 			case Property_Display.InfluenceVariable.OrbitSpeed:
 				manager.Boss.orbitspeed = float.Parse(input);
 				break;
+			case Property_Display.InfluenceVariable.BolometricCorrectionFactor:
+				manager.Boss.bolometricCorrectionFactor = double.Parse(input);
+				break;
 			default:
 				break;
 		}
@@ -137,7 +143,7 @@ public class ScrollPropManager : MonoBehaviour
 	{
 		switch (variable)
 		{
-			case Property_Display.InfluenceVariable.StarRadius:
+			case Property_Display.InfluenceVariable.StarMass:
 				break;
 			default:
 				break;
@@ -148,7 +154,7 @@ public class ScrollPropManager : MonoBehaviour
 	{
 		switch (variable)
 		{
-			case Property_Display.InfluenceVariable.StarRadius:
+			case Property_Display.InfluenceVariable.StarMass:
 				break;
 			default:
 				break;

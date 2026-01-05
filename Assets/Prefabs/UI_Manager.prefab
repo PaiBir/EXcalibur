@@ -242,39 +242,57 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Property_Display
   Properties:
-  - Input: 1
+  - Input: 4
     Target: 0
     MultibuttonChannels: 
-    Name: Star Radius (Rsol)
-  - Input: 1
+    Name: Run Model
+  - Input: 4
     Target: 1
     MultibuttonChannels: 
-    Name: Star Luminosity (Lsol)
-  - Input: 1
+    Name: Step Model
+  - Input: 5
     Target: 2
-    MultibuttonChannels: 
-    Name: Star Temperature (K)
-  - Input: 1
+    MultibuttonChannels: 0100000000000000030000000400000005000000
+    Name: Model Step Size
+  - Input: 0
     Target: 3
     MultibuttonChannels: 
-    Name: Distance (AU)
-  - Input: 0
+    Name: Model Run Length
+  - Input: 1
     Target: 4
     MultibuttonChannels: 
-    Name: Simulation Resolution
+    Name: Star Mass (Msol)
   - Input: 1
     Target: 5
     MultibuttonChannels: 
+    Name: Star Luminosity (Lsol)
+  - Input: 1
+    Target: 6
+    MultibuttonChannels: 
+    Name: Star Temperature (K)
+  - Input: 1
+    Target: 7
+    MultibuttonChannels: 
+    Name: Bolometric Correction Factor
+  - Input: 1
+    Target: 8
+    MultibuttonChannels: 
+    Name: Distance (AU)
+  - Input: 1
+    Target: 10
+    MultibuttonChannels: 
     Name: Orbit Speed (Earth days)
+  - Input: 0
+    Target: 9
+    MultibuttonChannels: 
+    Name: Simulation Resolution
   screens:
   - Name: Star Properties
-    propindicies: 000000000100000002000000
+    propindicies: 04000000050000000600000007000000
   - Name: Planet Properties
-    propindicies: 0300000005000000
-  - Name: Display Controls
-    propindicies: 04000000
-  - Name: Junk
-    propindicies: 0000000001000000020000000300000004000000050000000000000001000000020000000300000004000000050000000000000001000000020000000300000004000000050000000000000001000000
+    propindicies: 0800000009000000
+  - Name: Model Controls
+    propindicies: 0a00000002000000030000000000000001000000
   propBlock: {fileID: 5680644137270923164, guid: da68701e4f240ee47927fffbd85ed292, type: 3}
   scrollbar: {fileID: 1894789653099795657}
   proparea: {fileID: 7754198573277700429}
@@ -540,13 +558,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::UI_Manager
   PrimaryColor: {r: 1, g: 1, b: 1, a: 1}
   FadeTo: {r: 0, g: 0, b: 0, a: 0}
-  activeScreen: 0
-  starMass: 1
-  starLum: 1
-  starTemp: 5776
-  distance: 1
-  resolution: 1
-  orbitspeed: 1
+  activeScreen: 2
   Boss: {fileID: 0}
 --- !u!1 &8103286093805486868
 GameObject:

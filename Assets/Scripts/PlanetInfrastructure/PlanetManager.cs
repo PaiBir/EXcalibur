@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class PlanetManager : MonoBehaviour
 {
+	//Constants
+	public static double StefanBoltzmanConstant = 5.670374419e-8; //W/M^2K^4
+
+
+
 	[Header("Planet Properties")]
 	public Planet_Info planet_prop;
 	[Header("Sphere Source")]
@@ -12,7 +17,10 @@ public class PlanetManager : MonoBehaviour
 	[Range(1,6)] //Only icosphere meshes exist, and there are 6 of them
 	public int subdivLevel = 0;
 	public Material mat;
-	public float orbitspeed = 1.0f;
+	public double orbitspeed = 1.0f;
+
+	[Header("Star")]
+	public double StarOutput; // Watts per Meter Squared
 
 	int prevSubdiv = -1;
 	Mesh currentMesh = null;
@@ -40,7 +48,7 @@ public class PlanetManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-		transform.rotation = Quaternion.Euler(0, Time.time * orbitspeed, 0);
+		transform.rotation = Quaternion.Euler(0, Time.time * (float)orbitspeed, 0);
 		if (prevSubdiv != subdivLevel)
 		{
 			GetComponent<MeshRenderer>().material = mat;

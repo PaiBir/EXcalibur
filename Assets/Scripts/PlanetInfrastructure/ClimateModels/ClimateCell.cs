@@ -2,6 +2,14 @@ using UnityEngine;
 
 public class ClimateCell
 {
-	public float cellEnergy;
-	public Chemical[] cellChemicals;
+	public enum CellType
+	{
+		Atmospheric,
+		LandSurface,
+		Oceanic,
+		Generic
+	}
+	public CellType cellClassification;
+	protected float cellEnergy;
+	protected Chemical[] cellChemicals;
 }

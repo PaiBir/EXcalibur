@@ -14,19 +14,24 @@ public class Property_Display : MonoBehaviour
 	}
 	public enum InfluenceVariable
 	{
-		StarRadius,
+		TriggerModel,
+		TriggerModelStep,
+		ModelStepSize,
+		ModelRunLength,
+		StarMass,
 		StarLuminosity,
 		StarTemperature,
+		BolometricCorrectionFactor,
 		PlanetDistance,
 		PlanetResolution,
-		OrbitSpeed
+		OrbitSpeed,
 	}
 	[System.Serializable]
 	public struct PropGuide
 	{
 		public ActiveState Input;
 		public InfluenceVariable Target;
-		public int[] MultibuttonChannels;
+		public int[] MultibuttonChannels; //Multibutton configuration: Slot 0: set value, Slot 1: reset value, if -1, it won't use this slot, Slots 2+: target locations
 		public string Name;
 	}
 	[System.Serializable]
